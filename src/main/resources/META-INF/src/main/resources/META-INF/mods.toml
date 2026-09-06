@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="kingdommod"
+version="1.0.0"
+displayName="Kingdoms at War"
+description="Adds rare NPC kingdoms with roles, reputation, wars, and more."
+authors=["You"]
+
+[[dependencies.kingdommod]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.kingdommod]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,)"
+ordering="NONE"
+side="BOTH"

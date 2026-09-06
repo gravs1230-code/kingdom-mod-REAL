@@ -1,0 +1,32 @@
+package com.example.kingdommod;
+
+import net.minecraft.world.entity.npc.Villager;
+
+public enum KingdomRoles {
+    KING,
+    NOBLE,
+    SOLDIER,
+    MERCHANT,
+    FARMER,
+    COMMONER;
+
+    public static KingdomRoles fromString(String s) {
+        try {
+            return valueOf(s.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            return COMMONER;
+        }
+    }
+
+    public static String getRole(Villager villager) {
+        return villager.getPersistentData().getString("KingdomRole");
+    }
+
+    public static void setRole(Villager villager, KingdomRoles role) {
+        villager.getPersistentData().putString("KingdomRole", role.name());
+    }
+
+    public static boolean hasRole(Villager villager, KingdomRoles role) {
+        return getRole(villager).equals(role.name());
+    }
+}
